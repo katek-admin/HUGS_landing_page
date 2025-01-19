@@ -1,0 +1,46 @@
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Set width to 80% */
+  max-width: 1400px; /* Optional: prevent getting too wide on large screens */
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /*border: 1px solid rgba(255, 255, 255, 0.3);*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+  margin-right: 2rem;
+  filter: contrast(1.2);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  color: #fff;
+
+}
+
+.nav-link:hover {
+  color: #6525AB; /* Match your theme color */
+} 
