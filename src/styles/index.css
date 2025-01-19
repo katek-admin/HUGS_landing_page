@@ -39,3 +39,86 @@ body {
   color: transparent;
   animation: glow 8s linear infinite;
 }
+@keyframes glow {
+  0% {
+    background-position: 0% 50%;
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  25% {
+    filter: brightness(1.2) hue-rotate(15deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  75% {
+    filter: brightness(1.2) hue-rotate(-15deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: brightness(1) hue-rotate(0deg);
+  }
+}
+
+.glow-text {
+  background: linear-gradient(
+    90deg, 
+    #6525AB 0%, 
+    #9f6ad6 20%, 
+    #6525AB 40%, 
+    #b794d4 60%,
+    #6525AB 80%,
+    #9f6ad6 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glow 8s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(101, 37, 171, 0.5);
+}
+
+@keyframes cardGlow {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.7;
+    box-shadow: 0 0 20px rgba(101, 37, 171, 0.3);
+  }
+  25% {
+    opacity: 0.8;
+    box-shadow: 0 0 30px rgba(101, 37, 171, 0.5);
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.7;
+    box-shadow: 0 0 20px rgba(101, 37, 171, 0.3);
+  }
+  75% {
+    opacity: 0.8;
+    box-shadow: 0 0 30px rgba(101, 37, 171, 0.5);
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.7;
+    box-shadow: 0 0 20px rgba(101, 37, 171, 0.3);
+  }
+}
+
+.glow-card {
+  background: linear-gradient(
+    45deg, 
+    #6525AB 0%, 
+    #9f6ad6 25%, 
+    #6525AB 50%, 
+    #b794d4 75%,
+    #6525AB 100%
+  );
+  background-size: 200% auto;
+  animation: cardGlow 8s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(101, 37, 171, 0.3);
+  transition: all 0.3s ease;
+}
+
+.glow-card:hover {
+  animation-play-state: paused;
+}
