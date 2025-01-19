@@ -27,6 +27,56 @@ const advantages = [
   }
 ];
 
+// Network background component
+const NetworkBackground = () => (
+  <div className="absolute inset-0 overflow-hidden opacity-[0.07]">
+    <div className="absolute inset-0 flex items-center justify-center">
+      {/* Concentrated network grid */}
+      <div className="relative transform -rotate-12 network-float" 
+        style={{ width: '800px', height: '400px' }}> {/* Narrower fixed dimensions */}
+        {Array.from({ length: 60 }).map((_, i) => { // Reduced number of dots
+          const randomX = Math.random() * 100;
+          const randomY = Math.random() * 100;
+          const randomScale = 0.8 + Math.random() * 0.4;
+
+          return (
+            <div key={i} 
+              className="absolute" 
+              style={{ 
+                left: `${randomX}%`, 
+                top: `${randomY}%`,
+                transform: `scale(${randomScale})`
+              }}>
+              {/* Central dot */}
+              <div className="w-1.5 h-1.5 bg-white rounded-full relative z-10" />
+              
+              {/* Connection lines */}
+              <div className="absolute inset-0">
+                {Array.from({ length: 3 }).map((_, j) => { // Fixed number of connections
+                  const angle = (j * 120 + Math.random() * 30); // More regular angles
+                  const length = 50 + Math.random() * 30; // Shorter, more consistent lengths
+                  
+                  return (
+                    <div key={j}
+                      className="absolute top-0 left-1/2 bg-gradient-to-b from-white via-white/50 to-transparent"
+                      style={{
+                        width: '1px',
+                        height: `${length}px`,
+                        transform: `rotate(${angle}deg)`,
+                        transformOrigin: 'top',
+                        opacity: 0.4 + Math.random() * 0.3
+                      }} />
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+);
+
 function App() {
   const [selectedAdvantage, setSelectedAdvantage] = useState(0);
 
@@ -51,7 +101,7 @@ function App() {
             <p className="text-3xl text-gray-300 font-light">Твій помічник на фондовому ринку США!</p>
             <div className="flex justify-center gap-6 mt-12">
               <button className="bg-[#6525AB] text-white px-8 py-4 rounded-lg text-xl font-semibold 
-                hover:bg-opacity-90 transition-all flex items-center gap-2">
+                hover:bg-opacity-90 transition-all flex items-center gap-2 animate-pulse-slow rounded-full">
                 Спробувати <ArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -61,10 +111,11 @@ function App() {
       </header>
 
       {/* Quote Section */}
-      <section className="bg-gray-800/50 py-16">
+      <section className="bg-gray-800/50 py-14">
         <div className="container mx-auto px-4 text-center">
+          
           <blockquote className="text-2xl italic text-gray-300">
-            "Кожен день дає нам нові можливості. Все залежить від того, чи ми їх використовуємо."
+              "Кожен день дає нам нові можливості. Все залежить від того, чи ми їх використовуємо."
             <footer className="mt-4 text-lg text-gray-400">— Стівен Р. Кові</footer>
           </blockquote>
         </div>
@@ -88,7 +139,7 @@ function App() {
             Наш агент пропонує оформлені інвестиційні ідеї, а також готовий допомогти з реалізацією твоїх власних задумів.
             </p>
             <button className="bg-[#6525AB] text-white px-8 py-4 rounded-lg text-xl font-semibold 
-              hover:bg-opacity-90 transition-all flex items-center gap-2">
+              hover:bg-opacity-90 transition-all flex items-center gap-2 animate-pulse-slow rounded-full">
               Спробувати <ArrowRight className="w-5 h-5" />
             </button>
           </div>
@@ -108,17 +159,49 @@ function App() {
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl font-bold text-center mb-16 text-[#6525AB] uppercase">Як це працює?</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 backdrop-blur-sm">
-              <ScaleIcon className="w-12 h-12 mb-6 text-[#6525AB]" />
-              <p className="text-lg text-gray-300">Ми дивимось на кожен актив з двох точок зору: короткострокового спекулянта та довгострокового інвестора.</p>
+            {/* Card 1 */}
+            <div className="h-[320px]">
+              <div className="relative h-full">
+                <div className="relative bg-white/10 backdrop-blur-xl p-8 rounded-xl border border-white/20 
+                  shadow-[0_8px_32px_0_rgba(101,37,171,0.37)]
+                  before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/10 before:to-transparent before:rounded-xl
+                  h-full flex flex-col">
+                  <div className="relative z-10 flex flex-col h-full">
+                    <ScaleIcon className="w-12 h-12 mb-6 text-white" />
+                    <p className="text-lg text-white/90 flex-grow">Ми дивимось на кожен актив з двох точок зору: короткострокового спекулянта та довгострокового інвестора.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 backdrop-blur-sm">
-              <BarChart2 className="w-12 h-12 mb-6 text-[#6525AB]" />
-              <p className="text-lg text-gray-300">Розраховуємо справедливу вартість активу на базі Fair P/E, прогнозів аналітиків та ринкового сентименту.</p>
+
+            {/* Card 2 */}
+            <div className="h-[320px]">
+              <div className="relative h-full">
+                <div className="relative bg-white/10 backdrop-blur-xl p-8 rounded-xl border border-white/20 
+                  shadow-[0_8px_32px_0_rgba(101,37,171,0.37)]
+                  before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/10 before:to-transparent before:rounded-xl
+                  h-full flex flex-col">
+                  <div className="relative z-10 flex flex-col h-full">
+                    <BarChart2 className="w-12 h-12 mb-6 text-white" />
+                    <p className="text-lg text-white/90 flex-grow">Розраховуємо справедливу вартість активу на базі Fair P/E, прогнозів аналітиків та ринкового сентименту.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 backdrop-blur-sm">
-              <Brain className="w-12 h-12 mb-6 text-[#6525AB]" />
-              <p className="text-lg text-gray-300">Оцінюємо інвестицію на основі DCF-моделі, враховуючи ринкову динаміку та аналізуючи ключові можливості та загрози.</p>
+
+            {/* Card 3 */}
+            <div className="h-[320px]">
+              <div className="relative h-full">
+                <div className="relative bg-white/10 backdrop-blur-xl p-8 rounded-xl border border-white/20 
+                  shadow-[0_8px_32px_0_rgba(101,37,171,0.37)]
+                  before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/10 before:to-transparent before:rounded-xl
+                  h-full flex flex-col">
+                  <div className="relative z-10 flex flex-col h-full">
+                    <Brain className="w-12 h-12 mb-6 text-white" />
+                    <p className="text-lg text-white/90 flex-grow">Оцінюємо інвестицію на основі DCF-моделі, враховуючи ринкову динаміку та аналізуючи ключові можливості та загрози.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -178,7 +261,7 @@ function App() {
               <h3 className="text-2xl font-bold mb-4 text-[#6525AB]">FREEMIUM</h3>
               <p className="text-lg text-gray-300">Start for free</p>
               <button className="mt-8 border-2 border-[#6525AB] text-[#6525AB] px-8 py-3 rounded-lg 
-                hover:bg-[#6525AB] hover:text-white transition-all">
+                hover:bg-[#6525AB] hover:text-white transition-all rounded-full">
                 Get Started
               </button>
             </div>
@@ -210,7 +293,7 @@ function App() {
                   <button className="bg-white/95 text-[#6525AB] px-8 py-3 rounded-lg font-semibold
                     hover:bg-white transition-all shadow-[0_4px_16px_rgba(255,255,255,0.3)]
                     hover:shadow-[0_4px_24px_rgba(255,255,255,0.4)]
-                    transform hover:scale-105">
+                    transform hover:scale-105 animate-pulse-slow rounded-full">
                     Обрати
                   </button>
                 </div>
@@ -221,7 +304,7 @@ function App() {
       </section>
 
       {/* Footer Section */}
-      <footer className="bg-gray-800/50 py-8 mt-16 border-t border-gray-700">
+      <footer className="bg-gray-800/50 py-8 border-t border-gray-700">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-4">
@@ -235,7 +318,7 @@ function App() {
                 ЩО ЦЕ
               </a>
               <a href="#how-it-works" className="text-gray-400 hover:text-[#6525AB] transition-colors">
-                ЯК ЦЕ ПРАЦЮЄ
+                ЯК ЦЕ ПРАЦУЄ
               </a>
               <a href="#advantages" className="text-gray-400 hover:text-[#6525AB] transition-colors">
                 ПЕРЕВАГИ
