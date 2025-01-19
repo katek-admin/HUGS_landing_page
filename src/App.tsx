@@ -171,7 +171,7 @@ function App() {
           <div className="absolute inset-0 bg-gray-800/80" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[#6525AB] uppercase">Plans</h2>
+          <h2 className="text-4xl font-bold text-center mb-16 text-[#6525AB] uppercase">ТАРИФИ</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {/* Freemium Card */}
             <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm">
