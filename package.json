@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ekatek.github.io/HUGS_landing_page",
+  "homepage": "https://katek-admin.github.io/HUGS_landing_page",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
