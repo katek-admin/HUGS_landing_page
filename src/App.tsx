@@ -100,10 +100,21 @@ function App() {
             </h1>
             <p className="text-3xl text-gray-300 font-light">Твій помічник на фондовому ринку США!</p>
             <div className="flex justify-center gap-6 mt-12">
-              <button className="bg-[#6525AB] text-white px-8 py-4 rounded-lg text-xl font-semibold 
-                hover:bg-opacity-90 transition-all flex items-center gap-2 animate-pulse-slow rounded-full">
+              <a 
+                href="#plans" 
+                className="bg-[#6525AB] text-white px-8 py-4 rounded-full text-xl font-semibold 
+                  hover:bg-opacity-90 transition-all flex items-center gap-2 animate-pulse-slow
+                  cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('plans')?.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }}
+              >
                 Спробувати <ArrowRight className="w-5 h-5" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -138,8 +149,15 @@ function App() {
             Уяви, що в тебе є особистий помічник на ринку акцій, який допомагає знаходити потрібні активи, генерує за ними ідеї та нагадує, коли їх треба купити чи продати.
             Наш агент пропонує оформлені інвестиційні ідеї, а також готовий допомогти з реалізацією твоїх власних задумів.
             </p>
-            <button className="bg-[#6525AB] text-white px-8 py-4 rounded-lg text-xl font-semibold 
-              hover:bg-opacity-90 transition-all flex items-center gap-2 animate-pulse-slow rounded-full">
+            <button className="bg-[#6525AB] text-white px-8 py-4 rounded-full text-xl font-semibold 
+              hover:bg-opacity-90 transition-all flex items-center gap-2 animate-pulse-slow rounded-full"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('plans')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }}>
               Спробувати <ArrowRight className="w-5 h-5" />
             </button>
           </div>
@@ -260,8 +278,8 @@ function App() {
             <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm">
               <h3 className="text-2xl font-bold mb-4 text-[#6525AB]">FREEMIUM</h3>
               <p className="text-lg text-gray-300">Start for free</p>
-              <button className="mt-8 border-2 border-[#6525AB] text-[#6525AB] px-8 py-3 rounded-lg 
-                hover:bg-[#6525AB] hover:text-white transition-all rounded-full">
+              <button className="mt-8 border-2 border-[#6525AB] text-[#6525AB] px-8 py-3 rounded-full 
+                hover:bg-[#6525AB] hover:text-white transition-all">
                 Get Started
               </button>
             </div>
@@ -290,10 +308,10 @@ function App() {
                       <span className="text-white">✓</span> Priority support
                     </li>
                   </ul>
-                  <button className="bg-white/95 text-[#6525AB] px-8 py-3 rounded-lg font-semibold
+                  <button className="bg-white/95 text-[#6525AB] px-8 py-3 rounded-full font-semibold
                     hover:bg-white transition-all shadow-[0_4px_16px_rgba(255,255,255,0.3)]
                     hover:shadow-[0_4px_24px_rgba(255,255,255,0.4)]
-                    transform hover:scale-105 animate-pulse-slow rounded-full">
+                    transform hover:scale-105 animate-pulse-slow">
                     Обрати
                   </button>
                 </div>
