@@ -1,8 +1,9 @@
 import { ArrowRight, BarChart2, Brain, TrophyIcon, Sparkles, ScaleIcon, Radar } from 'lucide-react';
 import Navbar from './components/Navbar';
 import { useState } from 'react';
-import Logo from './assets/Logo.svg';
-
+import Background from './assets/background.jpg';
+import NewOpportunityImg from './assets/new_opportunities.png';
+import Footer from './components/Footer';
 
 const advantages = [
   {
@@ -27,55 +28,6 @@ const advantages = [
   }
 ];
 
-// Network background component
-const NetworkBackground = () => (
-  <div className="absolute inset-0 overflow-hidden opacity-[0.07]">
-    <div className="absolute inset-0 flex items-center justify-center">
-      {/* Concentrated network grid */}
-      <div className="relative transform -rotate-12 network-float" 
-        style={{ width: '800px', height: '400px' }}> {/* Narrower fixed dimensions */}
-        {Array.from({ length: 60 }).map((_, i) => { // Reduced number of dots
-          const randomX = Math.random() * 100;
-          const randomY = Math.random() * 100;
-          const randomScale = 0.8 + Math.random() * 0.4;
-
-          return (
-            <div key={i} 
-              className="absolute" 
-              style={{ 
-                left: `${randomX}%`, 
-                top: `${randomY}%`,
-                transform: `scale(${randomScale})`
-              }}>
-              {/* Central dot */}
-              <div className="w-1.5 h-1.5 bg-white rounded-full relative z-10" />
-              
-              {/* Connection lines */}
-              <div className="absolute inset-0">
-                {Array.from({ length: 3 }).map((_, j) => { // Fixed number of connections
-                  const angle = (j * 120 + Math.random() * 30); // More regular angles
-                  const length = 50 + Math.random() * 30; // Shorter, more consistent lengths
-                  
-                  return (
-                    <div key={j}
-                      className="absolute top-0 left-1/2 bg-gradient-to-b from-white via-white/50 to-transparent"
-                      style={{
-                        width: '1px',
-                        height: `${length}px`,
-                        transform: `rotate(${angle}deg)`,
-                        transformOrigin: 'top',
-                        opacity: 0.4 + Math.random() * 0.3
-                      }} />
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  </div>
-);
 
 function App() {
   const [selectedAdvantage, setSelectedAdvantage] = useState(0);
@@ -84,13 +36,13 @@ function App() {
     <div className="min-h-screen bg-gray-900 text-gray-100">
       <Navbar />
       {/* Hero Section */}
-      <header className="relative bg-[#6525AB]/10 border-b border-[#6525AB]/20 overflow-hidden pt-16">
+      <header className="relative bg-[#6525AB]/10  border-[#6525AB]/20 overflow-hidden pt-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#6525AB]/20 via-transparent to-transparent" />
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&q=80"
+            src={Background}
             alt="Background" 
-            className="w-full h-full object-cover opacity-10"
+            className="w-full h-full object-cover opacity-40"
           />
         </div>
         <div className="container mx-auto px-4 pt-32 pb-40 text-center relative">
@@ -137,7 +89,7 @@ function App() {
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="relative rounded-2xl overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80"
+              src={NewOpportunityImg}
               alt="Trading visualization" 
               className="w-full h-[400px] object-cover rounded-2xl"
             />
@@ -273,11 +225,25 @@ function App() {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl font-bold text-center mb-16 text-[#6525AB] uppercase">ТАРИФИ</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Freemium Card */}
             <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm">
               <h3 className="text-2xl font-bold mb-4 text-[#6525AB]">FREEMIUM</h3>
-              <p className="text-lg text-gray-300">Start for free</p>
+              <p className="text-lg text-gray-300 mb-4">Start for free</p>
+              {/* Added bullet points */}
+              <ul className="text-white/90 text-left space-y-3 mb-8 backdrop-blur-sm bg-white/10 p-4 rounded-lg
+                    border border-white/20">
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> 1 інвестиційна ідея в день
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> Інвестиційний портфель (обмежено)
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> Сповіщення по тикерам (обмежено)
+                    </li>
+                  </ul>
+              
               <button className="mt-8 border-2 border-[#6525AB] text-[#6525AB] px-8 py-3 rounded-full 
                 hover:bg-[#6525AB] hover:text-white transition-all">
                 Get Started
@@ -296,19 +262,29 @@ function App() {
                   
                   <h3 className="text-2xl font-bold mb-4 text-white">BASE</h3>
                   <p className="text-3xl font-bold text-white mb-4">300 грн/міс</p>
-                  <ul className="text-white/90 text-left space-y-3 mb-8 backdrop-blur-sm bg-white/10 p-4 rounded-lg
+                  <ul className="text-white/90 text-left space-y-3 mb-2 backdrop-blur-sm bg-white/10 p-4 rounded-lg
                     border border-white/20">
                     <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> All Freemium features
+                      <span className="text-white">✓</span> Інвестиційні ідеї*
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Premium analytics
+                      <span className="text-white">✓</span> Інвестиційний портфель*
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Priority support
+                      <span className="text-white">✓</span> Сповіщення по тикерам*
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> Список спостереження*
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> ШІ помічник*
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> 10 особистих тикерів/компаній для аналізу                      *
                     </li>
                   </ul>
-                  <button className="bg-white/95 text-[#6525AB] px-8 py-3 rounded-full font-semibold
+                  <p className="text-gray-300 text-sm mb-8">* агент ХАГС</p>
+                  <button className="mt-8 bg-white/95 text-[#6525AB] px-8 py-3 rounded-full font-semibold
                     hover:bg-white transition-all shadow-[0_4px_16px_rgba(255,255,255,0.3)]
                     hover:shadow-[0_4px_24px_rgba(255,255,255,0.4)]
                     transform hover:scale-105 animate-pulse-slow">
@@ -317,37 +293,53 @@ function App() {
                 </div>
               </div>
             </div>
+            
+            {/* PRO Card */}
+            <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm">
+              <h3 className="text-2xl font-bold mb-4 text-[#6525AB]">PRO</h3>
+              <p className="text-lg text-gray-300 mb-4">Start for free</p>
+              {/* Added bullet points */}
+              <ul className="text-white/90 text-left space-y-3 mb-8 backdrop-blur-sm bg-white/10 p-4 rounded-lg
+                    border border-white/20">
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span>  Інвестиційні ідеї
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> Інвестиційний портфель
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> Сповіщення по тикерам
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> Список спостереження
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> ШІ помічник
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> Особисті тикери/компанії для аналізу
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> Повний список параметрів по тикеру/компанії
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="text-white">✓</span> Персональне управління власним портфелем
+                    </li>
+                  </ul>
+              
+              <button className="mt-8 border-2 border-[#6525AB] text-[#6525AB] px-8 py-3 rounded-full 
+                hover:bg-[#6525AB] hover:text-white transition-all">
+                Get Started
+              </button>
+            </div>
+            
           </div>
         </div>
       </section>
 
       {/* Footer Section */}
-      <footer className="bg-gray-800/50 py-8 border-t border-gray-700">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-4">
-              <img src={Logo} alt="Logo" className="h-8 w-auto" />
-              <p className="text-gray-400">
-                © {new Date().getFullYear()} Агент Хагс. Всі права захищені.
-              </p>
-            </div>
-            <div className="hidden md:flex gap-8">
-              <a href="#opportunities" className="text-gray-400 hover:text-[#6525AB] transition-colors">
-                ЩО ЦЕ
-              </a>
-              <a href="#how-it-works" className="text-gray-400 hover:text-[#6525AB] transition-colors">
-                ЯК ЦЕ ПРАЦУЄ
-              </a>
-              <a href="#advantages" className="text-gray-400 hover:text-[#6525AB] transition-colors">
-                ПЕРЕВАГИ
-              </a>
-              <a href="#plans" className="text-gray-400 hover:text-[#6525AB] transition-colors">
-                ТАРИФИ
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      
+      <Footer />
     </div>
   );
 }
