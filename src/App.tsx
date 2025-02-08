@@ -215,55 +215,45 @@ function App() {
 
       {/* Plans Section */}
       <section id="plans" className="bg-gray-800/50 py-24 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1642790106098-d05b98f39fce?auto=format&fit=crop&q=80"
-            alt="Background pattern" 
-            className="w-full h-full object-cover opacity-10"
-          />
-          <div className="absolute inset-0 bg-gray-800/80" />
-        </div>
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl font-bold text-center mb-16 text-[#6525AB] uppercase">ТАРИФИ</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Freemium Card */}
-            <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm">
+            <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-[#6525AB]">FREEMIUM</h3>
               <p className="text-lg text-gray-300 mb-4">Start for free</p>
-              {/* Added bullet points */}
               <ul className="text-white/90 text-left space-y-3 mb-8 backdrop-blur-sm bg-white/10 p-4 rounded-lg
-                    border border-white/20">
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> 1 інвестиційна ідея в день
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Інвестиційний портфель (обмежено)
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Сповіщення по тикерам (обмежено)
-                    </li>
-                  </ul>
-              
-              <button className="mt-8 border-2 border-[#6525AB] text-[#6525AB] px-8 py-3 rounded-full 
-                hover:bg-[#6525AB] hover:text-white transition-all">
-                Get Started
+                border border-white/20 flex-grow">
+                <li className="flex items-center gap-2">
+                  <span className="text-white">✓</span> 1 інвестиційна ідея в день
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-white">✓</span> Інвестиційний портфель (обмежено)
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-white">✓</span> Сповіщення по тикерам (обмежено)
+                </li>
+              </ul>
+              <button className="border-2 border-[#6525AB] text-[#6525AB] px-8 py-3 rounded-full 
+                hover:bg-[#6525AB] hover:text-white transition-all mt-auto">
+                Спробувати
               </button>
             </div>
             
             {/* Base Card with Premium Effect */}
-            <div className="relative group transform hover:-translate-y-2 transition-all duration-300">
+            <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-[#6525AB] via-[#8a4dd1] to-[#6525AB] rounded-xl opacity-0 
-                group-hover:opacity-100 blur-xl transition-all duration-500" />
+                group-hover:opacity-10 blur-md transition-all duration-500" />
               <div className="relative bg-[#6525AB]/90 backdrop-blur-xl p-8 rounded-xl border border-white/30 text-center 
                 shadow-[0_8px_32px_0_rgba(255,255,255,0.3)] transition-all duration-300
                 hover:shadow-[0_12px_40px_0_rgba(255,255,255,0.4)]
-                before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/20 before:to-transparent before:rounded-xl">
-                <div className="relative z-10">
-                  
+                before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/20 before:to-transparent before:rounded-xl
+                h-full flex flex-col">
+                <div className="relative z-10 flex flex-col h-full">
                   <h3 className="text-2xl font-bold mb-4 text-white">BASE</h3>
                   <p className="text-3xl font-bold text-white mb-4">300 грн/міс</p>
                   <ul className="text-white/90 text-left space-y-3 mb-2 backdrop-blur-sm bg-white/10 p-4 rounded-lg
-                    border border-white/20">
+                    border border-white/20 flex-grow">
                     <li className="flex items-center gap-2">
                       <span className="text-white">✓</span> Інвестиційні ідеї*
                     </li>
@@ -280,14 +270,14 @@ function App() {
                       <span className="text-white">✓</span> ШІ помічник*
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> 10 особистих тикерів/компаній для аналізу                      *
+                      <span className="text-white">✓</span> 10 особистих тикерів/компаній для аналізу*
                     </li>
                   </ul>
-                  <p className="text-gray-300 text-sm mb-8">* агент ХАГС</p>
-                  <button className="mt-8 bg-white/95 text-[#6525AB] px-8 py-3 rounded-full font-semibold
+                  <p className="text-gray-300 text-sm mb-4">* агент ХАГС</p>
+                  <button className="bg-white/95 text-[#6525AB] px-8 py-3 rounded-full font-semibold
                     hover:bg-white transition-all shadow-[0_4px_16px_rgba(255,255,255,0.3)]
                     hover:shadow-[0_4px_24px_rgba(255,255,255,0.4)]
-                    transform hover:scale-105 animate-pulse-slow">
+                    transform hover:scale-105 animate-pulse-slow mt-auto">
                     Обрати
                   </button>
                 </div>
@@ -295,41 +285,39 @@ function App() {
             </div>
             
             {/* PRO Card */}
-            <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm">
+            <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm flex flex-col">
               <h3 className="text-2xl font-bold mb-4 text-[#6525AB]">PRO</h3>
               <p className="text-lg text-gray-300 mb-4">Start for free</p>
-              {/* Added bullet points */}
               <ul className="text-white/90 text-left space-y-3 mb-8 backdrop-blur-sm bg-white/10 p-4 rounded-lg
-                    border border-white/20">
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span>  Інвестиційні ідеї
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Інвестиційний портфель
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Сповіщення по тикерам
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Список спостереження
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> ШІ помічник
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Особисті тикери/компанії для аналізу
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Повний список параметрів по тикеру/компанії
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Персональне управління власним портфелем
-                    </li>
-                  </ul>
-              
-              <button className="mt-8 border-2 border-[#6525AB] text-[#6525AB] px-8 py-3 rounded-full 
-                hover:bg-[#6525AB] hover:text-white transition-all">
-                Get Started
+                border border-white/20 flex-grow">
+                <li className="flex items-center gap-2">
+                  <span className="text-white">✓</span> Інвестиційні ідеї
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-white">✓</span> Інвестиційний портфель
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-white">✓</span> Сповіщення по тикерам
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-white">✓</span> Список спостереження
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-white">✓</span> ШІ помічник
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-white">✓</span> Особисті тикери/компанії для аналізу
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-white">✓</span> Повний список параметрів по тикеру/компанії
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-white">✓</span> Персональне управління власним портфелем
+                </li>
+              </ul>
+              <button className="border-2 border-gray-500 text-gray-500 px-8 py-3 rounded-full 
+                hover:bg-[#6525AB] hover:text-white transition-all mt-auto" disabled>
+                Не доступно
               </button>
             </div>
             
