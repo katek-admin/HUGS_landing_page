@@ -25,18 +25,6 @@ const Footer = () => {
             >
               Договір публічної оферти
             </Link>
-           <a href="#opportunities" className="text-gray-400 hover:text-[#6525AB] transition-colors">
-             ЩО ЦЕ
-           </a>
-           <a href="#how-it-works" className="text-gray-400 hover:text-[#6525AB] transition-colors">
-             ЯК ЦЕ ПРАЦУЄ
-           </a>
-           <a href="#advantages" className="text-gray-400 hover:text-[#6525AB] transition-colors">
-             ПЕРЕВАГИ
-           </a>
-           <a href="#plans" className="text-gray-400 hover:text-[#6525AB] transition-colors">
-             ТАРИФИ
-           </a>
            
          </div>
        </div>

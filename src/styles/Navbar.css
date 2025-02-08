@@ -84,6 +84,24 @@
   }
 }
 
+.nav-link {
+  @apply px-4 py-2 text-gray-300 hover:text-white transition-colors;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.mobile-nav-link {
+  @apply block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-700/50 transition-colors;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .navbar {

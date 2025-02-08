@@ -2,9 +2,19 @@ import '../styles/Navbar.css';
 import Logo from '../assets/logo_white.png';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      element?.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false); // Close mobile menu after clicking
+    }, 100);
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -24,19 +34,59 @@ const Navbar = () => {
 
       {/* Desktop Navigation */}
       <div className="nav-links hidden md:flex">
-        <a href="#opportunities" className="nav-link" onClick={() => window.location.href = '/#opportunities'}>ЩО ЦЕ</a>
-        <a href="#how-it-works" className="nav-link" onClick={() => window.location.href = '/#how-it-works'}>ЯК ЦЕ ПРАЦЮЄ</a>
-        <a href="#advantages" className="nav-link" onClick={() => window.location.href = '/#advantages'}>ПЕРЕВАГИ</a>
-        <a href="#plans" className="nav-link" onClick={() => window.location.href = '/#plans'}>ТАРИФИ</a>
+        <button 
+          onClick={() => scrollToSection('opportunities')} 
+          className="nav-link"
+        >
+          ЩО ЦЕ
+        </button>
+        <button 
+          onClick={() => scrollToSection('how-it-works')} 
+          className="nav-link"
+        >
+          ЯК ЦЕ ПРАЦЮЄ
+        </button>
+        <button 
+          onClick={() => scrollToSection('advantages')} 
+          className="nav-link"
+        >
+          ПЕРЕВАГИ
+        </button>
+        <button 
+          onClick={() => scrollToSection('plans')} 
+          className="nav-link"
+        >
+          ТАРИФИ
+        </button>
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="mobile-nav">
-          <a href="#opportunities" className="mobile-nav-link" onClick={toggleMenu}>ЩО ЦЕ</a>
-          <a href="#how-it-works" className="mobile-nav-link" onClick={toggleMenu}>ЯК ЦЕ ПРАЦЮЄ</a>
-          <a href="#advantages" className="mobile-nav-link" onClick={toggleMenu}>ПЕРЕВАГИ</a>
-          <a href="#plans" className="mobile-nav-link" onClick={toggleMenu}>ТАРИФИ</a>
+          <button 
+            className="mobile-nav-link" 
+            onClick={() => scrollToSection('opportunities')}
+          >
+            ЩО ЦЕ
+          </button>
+          <button 
+            className="mobile-nav-link" 
+            onClick={() => scrollToSection('how-it-works')}
+          >
+            ЯК ЦЕ ПРАЦЮЄ
+          </button>
+          <button 
+            className="mobile-nav-link" 
+            onClick={() => scrollToSection('advantages')}
+          >
+            ПЕРЕВАГИ
+          </button>
+          <button 
+            className="mobile-nav-link" 
+            onClick={() => scrollToSection('plans')}
+          >
+            ТАРИФИ
+          </button>
         </div>
       )}
     </nav>
