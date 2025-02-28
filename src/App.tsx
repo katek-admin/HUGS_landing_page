@@ -3,28 +3,32 @@ import Navbar from './components/Navbar';
 import { useState } from 'react';
 import Background from './assets/background.jpg';
 import NewOpportunityImg from './assets/new_opportunities.png';
+import HITImg from './assets/HIT.png';
+import PortfolioImg from './assets/Portfolio.png';
+import TwoOpinionsImg from './assets/2 opinions.png';
+import ThreeOpinionsImg from './assets/3 opinions.png';
 import Footer from './components/Footer';
 
 const advantages = [
   {
     icon: <Sparkles className="w-6 h-6" />,
     text: "Готові ідеї від агента, що оновлюються кожного дня.",
-    image: "https://images.unsplash.com/photo-1642790106131-6de9e069a9ee"
+    image: ThreeOpinionsImg
   },
   {
     icon: <ScaleIcon className="w-6 h-6" />,
     text: "Погляд з двох позицій: інвестора та спекулянта.",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3"
+    image: TwoOpinionsImg
   },
   {
     icon: <TrophyIcon className="w-6 h-6" />,
     text: "HIT – унікальний критерій відбору найкращих активів, згідно фундаментального та технічного аналізу.",
-    image: "https://images.unsplash.com/photo-1642790106099-948a2465ff86"
+    image: HITImg
   },
   {
     icon: <Radar className="w-6 h-6" />,
     text: "Список відстеження активів.",
-    image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f"
+    image: PortfolioImg
   }
 ];
 
@@ -120,8 +124,8 @@ function App() {
       <section id="how-it-works" className="bg-gray-800/50 py-24 relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1642790106099-948a2465ff86?auto=format&fit=crop&q=80"
-            alt="Background pattern" 
+            src="./assets/background.jpg?auto=format&fit=crop&q=80"
+            alt="" 
             className="w-full h-full object-cover opacity-10"
           />
           <div className="absolute inset-0 bg-gray-800/80" />
@@ -205,10 +209,10 @@ function App() {
           <div className="order-1 md:order-2 relative rounded-2xl overflow-hidden">
             <img 
               src={`${advantages[selectedAdvantage].image}?auto=format&fit=crop&q=80`}
-              alt="Trading analysis" 
+              alt="" 
               className="w-full h-[600px] object-cover rounded-2xl transition-opacity duration-300"
             />
-            <div className="absolute inset-0 bg-gradient-to-l from-[#6525AB]/80 to-transparent" />
+            
           </div>
         </div>
       </section>
