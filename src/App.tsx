@@ -183,37 +183,38 @@ function App() {
 
       {/* Advantages Section */}
       <section id="advantages" className="container mx-auto px-4 py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="gap-12 items-center max-w-6xl mx-auto">
           <div className="order-2 md:order-1">
             <h2 className="text-4xl font-bold mb-16 text-[#6525AB] uppercase">Переваги</h2>
-            <div className="space-y-6">
-              {advantages.map((advantage, index) => (
-                <div
-                  key={index}
-                  className={`flex items-start gap-4 p-6 rounded-xl border transition-all cursor-pointer
-                    ${selectedAdvantage === index 
-                      ? 'bg-[#6525AB] border-purple-400' 
-                      : 'bg-gray-800 border-gray-700 hover:bg-gray-700'}`}
-                  onClick={() => setSelectedAdvantage(index)}
-                >
-                  <div className={`shrink-0 ${selectedAdvantage === index ? 'text-white' : 'text-[#6525AB]'}`}>
-                    {advantage.icon}
+            <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+              <div className="space-y-6">
+                {advantages.map((advantage, index) => (
+                  <div
+                    key={index}
+                    className={`flex items-start gap-4 p-6 rounded-xl border transition-all cursor-pointer
+                      ${selectedAdvantage === index 
+                        ? 'bg-[#6525AB] border-purple-400' 
+                        : 'bg-gray-800 border-gray-700 hover:bg-gray-700'}`}
+                    onClick={() => setSelectedAdvantage(index)}
+                  >
+                    <div className={`shrink-0 ${selectedAdvantage === index ? 'text-white' : 'text-[#6525AB]'}`}>
+                      {advantage.icon}
+                    </div>
+                    <p className={`text-lg ${selectedAdvantage === index ? 'text-white' : 'text-gray-300'}`}>
+                      {advantage.text}
+                    </p>
                   </div>
-                  <p className={`text-lg ${selectedAdvantage === index ? 'text-white' : 'text-gray-300'}`}>
-                    {advantage.text}
-                  </p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+              <div className="order-1 md:order-2 relative rounded-2xl overflow-hidden">
+                <img 
+                  src={`${advantages[selectedAdvantage].image}?auto=format&fit=crop&q=80`}
+                  alt="" 
+                  className="w-full h-auto xl:h-[600px] object-contain xl:object-cover rounded-2xl transition-opacity duration-300"
+                />       
+              </div>
           </div>
-          <div className="order-1 md:order-2 relative rounded-2xl overflow-hidden">
-            <img 
-              src={`${advantages[selectedAdvantage].image}?auto=format&fit=crop&q=80`}
-              alt="" 
-              className="w-full h-[600px] object-cover rounded-2xl transition-opacity duration-300"
-            />
-            
-          </div>
+         </div>
         </div>
       </section>
 
