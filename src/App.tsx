@@ -1,33 +1,28 @@
-import { ArrowRight, BarChart2, Brain, TrophyIcon, Sparkles, ScaleIcon, Radar } from 'lucide-react';
+import { ArrowRight, BarChart2, Brain, Sparkles, ScaleIcon, Radar, ArrowBigRight, ArrowBigDown } from 'lucide-react';
 import Navbar from './components/Navbar';
 import { useState } from 'react';
 import Background from './assets/background.jpg';
 import NewOpportunityImg from './assets/new_opportunities.png';
 import HITImg from './assets/HIT.png';
 import PortfolioImg from './assets/Portfolio.png';
-import TwoOpinionsImg from './assets/2 opinions.png';
+//import TwoOpinionsImg from './assets/2 opinions.png';
 import ThreeOpinionsImg from './assets/3 opinions.png';
 import Footer from './components/Footer';
 
 const advantages = [
   {
     icon: <Sparkles className="w-6 h-6" />,
-    text: "Готові ідеї від агента, що оновлюються кожного дня.",
+    text: "Інформаційно-аналітичні огляди публічних компаній у зручному форматі",
     image: ThreeOpinionsImg
   },
   {
     icon: <ScaleIcon className="w-6 h-6" />,
-    text: "Погляд з двох позицій: інвестора та спекулянта.",
-    image: TwoOpinionsImg
-  },
-  {
-    icon: <TrophyIcon className="w-6 h-6" />,
-    text: "HIT – унікальний критерій відбору найкращих активів, згідно фундаментального та технічного аналізу.",
+    text: "Добірка компаній з високими оцінками згідно нашої аналітичної моделі",
     image: HITImg
   },
   {
     icon: <Radar className="w-6 h-6" />,
-    text: "Список відстеження активів.",
+    text: "Персоналізовані повідомлення, які налаштовуються за твоїми критеріями",
     image: PortfolioImg
   }
 ];
@@ -102,8 +97,13 @@ function App() {
           <div className="text-left">
             <h2 className="text-4xl font-bold mb-8 text-[#6525AB] uppercase">Допомагаємо знаходити нові можливості</h2>
             <p className="text-xl leading-relaxed mb-12 text-gray-300">
-            Уяви, що в тебе є особистий помічник на ринку акцій, який допомагає знаходити потрібні активи, генерує за ними ідеї та нагадує, коли їх треба купити чи продати.
-            Наш агент пропонує оформлені інвестиційні ідеї, а також готовий допомогти з реалізацією твоїх власних задумів.
+              <ArrowBigDown className="inline-block w-4 h-4 mr-2" /> Уяви, що в тебе є особистий помічник на фондовому ринку, який допомагає аналізувати різні активи та ухвалювати більш зважені рішення.
+              <br />
+              <ArrowBigDown className="inline-block w-4 h-4 mr-2" /> Агент Хагс відкидає весь шум і зосереджується на головному — на цифрах.
+              <br />
+              <ArrowBigDown className="inline-block w-4 h-4 mr-2" /> Вводиш тикер — і отримуєш інформаційно-аналітичний огляд на основі публічних джерел та ринкових індикаторів.
+              <br /><br />
+              <ArrowBigRight className="inline-block w-4 h-4 mr-2" /> Рішення завжди залишається за тобою.
             </p>
             <button className="bg-[#6525AB] text-white px-8 py-4 rounded-full text-xl font-semibold 
               hover:bg-opacity-90 transition-all flex items-center gap-2 animate-pulse-slow rounded-full"
@@ -137,12 +137,11 @@ function App() {
             <div className="h-[320px]">
               <div className="relative h-full">
                 <div className="relative bg-white/10 backdrop-blur-xl p-8 rounded-xl border border-white/20 
-                  shadow-[0_8px_32px_0_rgba(101,37,171,0.37)]
                   before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/10 before:to-transparent before:rounded-xl
                   h-full flex flex-col">
                   <div className="relative z-10 flex flex-col h-full">
                     <ScaleIcon className="w-12 h-12 mb-6 text-white" />
-                    <p className="text-lg text-white/90 flex-grow">Ми дивимось на кожен актив з двох точок зору: короткострокового спекулянта та довгострокового інвестора.</p>
+                    <p className="text-lg text-white/90 flex-grow">Ми аналізуємо кожну компанію з двох точок зору: короткострокової ринкової динаміки та довгострокових фундаментальних показників.</p>
                   </div>
                 </div>
               </div>
@@ -152,12 +151,11 @@ function App() {
             <div className="h-[320px]">
               <div className="relative h-full">
                 <div className="relative bg-white/10 backdrop-blur-xl p-8 rounded-xl border border-white/20 
-                  shadow-[0_8px_32px_0_rgba(101,37,171,0.37)]
                   before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/10 before:to-transparent before:rounded-xl
                   h-full flex flex-col">
                   <div className="relative z-10 flex flex-col h-full">
                     <BarChart2 className="w-12 h-12 mb-6 text-white" />
-                    <p className="text-lg text-white/90 flex-grow">Розраховуємо справедливу вартість активу на базі Fair P/E, прогнозів аналітиків та ринкового сентименту.</p>
+                    <p className="text-lg text-white/90 flex-grow">Розраховуємо орієнтовну вартість на основі фінансових коефіцієнтів, ринкових настроїв і аналітичних прогнозів з відкритих джерел.</p>
                   </div>
                 </div>
               </div>
@@ -167,12 +165,11 @@ function App() {
             <div className="h-[320px]">
               <div className="relative h-full">
                 <div className="relative bg-white/10 backdrop-blur-xl p-8 rounded-xl border border-white/20 
-                  shadow-[0_8px_32px_0_rgba(101,37,171,0.37)]
                   before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/10 before:to-transparent before:rounded-xl
                   h-full flex flex-col">
                   <div className="relative z-10 flex flex-col h-full">
                     <Brain className="w-12 h-12 mb-6 text-white" />
-                    <p className="text-lg text-white/90 flex-grow">Оцінюємо інвестицію на основі DCF-моделі, враховуючи ринкову динаміку та аналізуючи ключові можливості та загрози.</p>
+                    <p className="text-lg text-white/90 flex-grow">Моделюємо сценарії зміни вартості за допомогою DCF та інших загальновживаних методів, враховуючи потенційні ризики та можливості.</p>
                   </div>
                 </div>
               </div>
@@ -180,13 +177,30 @@ function App() {
           </div>
         </div>
       </section>
-
+      {/* Video Section */}
+      <section id="video" className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-1 gap-8 max-w-6xl mx-auto">
+          <div className="space-y-6">
+            <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm flex flex-col">
+              <div className="w-full h-[400px]">
+                <iframe 
+                  src="https://www.youtube.com/embed/0nUg0T8se-I" 
+                  title="YouTube video Agent HUGS" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Advantages Section */}
-      <section id="advantages" className="container mx-auto px-4 py-24">
-        <div className="gap-12 items-center max-w-6xl mx-auto">
+      <section id="advantages" className="bg-gray-800/50 py-24 relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="order-2 md:order-1">
-            <h2 className="text-4xl font-bold mb-16 text-[#6525AB] uppercase">Переваги</h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-[#6525AB] uppercase sm:mb-10">Переваги</h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto py-0">
               <div className="space-y-6">
                 {advantages.map((advantage, index) => (
                   <div
@@ -206,11 +220,11 @@ function App() {
                   </div>
                 ))}
               </div>
-              <div className="order-1 md:order-2 relative rounded-2xl overflow-hidden">
+              <div className="order-1 md:order-2 relative rounded-2xl overflow-hidden mt-10">
                 <img 
                   src={`${advantages[selectedAdvantage].image}?auto=format&fit=crop&q=80`}
                   alt="" 
-                  className="w-full h-auto xl:h-[600px] object-contain xl:object-cover rounded-2xl transition-opacity duration-300"
+                  className="w-full h-auto xl:h-[400px]object-contain xl:object-cover rounded-2xl transition-opacity duration-300"
                 />       
               </div>
           </div>
@@ -219,32 +233,10 @@ function App() {
       </section>
 
       {/* Plans Section */}
-      <section id="plans" className="bg-gray-800/50 py-24 relative overflow-hidden">
+      <section id="plans" className="py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-4xl font-bold text-center mb-16 text-[#6525AB] uppercase">ТАРИФИ</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Freemium Card */}
-            <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm flex flex-col">
-              <h3 className="text-2xl font-bold mb-4 text-[#6525AB]">FREEMIUM</h3>
-              <p className="text-lg text-gray-300 mb-4">Start for free</p>
-              <ul className="text-white/90 text-left space-y-3 mb-8 backdrop-blur-sm bg-white/10 p-4 rounded-lg
-                border border-white/20 flex-grow">
-                <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> 1 інвестиційна ідея в день
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> Інвестиційний портфель (обмежено)
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> Сповіщення по тикерам (обмежено)
-                </li>
-              </ul>
-              <button className="border-2 border-[#6525AB] text-[#6525AB] px-8 py-3 rounded-full 
-                hover:bg-[#6525AB] hover:text-white transition-all mt-auto">
-                Спробувати
-              </button>
-            </div>
-            
+          <div className="grid md:grid-cols-1 gap-8 max-w-xl mx-auto">
             {/* Base Card with Premium Effect */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-[#6525AB] via-[#8a4dd1] to-[#6525AB] rounded-xl opacity-0 
@@ -256,76 +248,41 @@ function App() {
                 h-full flex flex-col">
                 <div className="relative z-10 flex flex-col h-full">
                   <h3 className="text-2xl font-bold mb-4 text-white">BASE</h3>
-                  <p className="text-3xl font-bold text-white mb-4">300 грн/міс</p>
+                  <p className="text-3xl font-bold text-white mb-4">500 грн/міс*</p>
                   <ul className="text-white/90 text-left space-y-3 mb-2 backdrop-blur-sm bg-white/10 p-4 rounded-lg
                     border border-white/20 flex-grow">
                     <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Інвестиційні ідеї*
+                      <span className="text-white">✓</span> Огляди компаній на основі публічних даних
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Інвестиційний портфель*
+                      <span className="text-white">✓</span> Список спостереження
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Сповіщення по тикерам*
+                      <span className="text-white">✓</span> ШІ-помічник для формування інформаційних оглядів
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> Список спостереження*
+                      <span className="text-white">✓</span> Персоналізовані повідомлення
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> ШІ помічник*
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="text-white">✓</span> 10 особистих тикерів/компаній для аналізу*
+                      <span className="text-white">✓</span> Перелік компаній з високими аналітичними оцінками
                     </li>
                   </ul>
-                  <p className="text-gray-300 text-sm mb-4">* агент ХАГС</p>
-                  <button className="bg-white/95 text-[#6525AB] px-8 py-3 rounded-full font-semibold
+                  <p className="text-gray-300 text-sm mb-4">* для учасників <a className="underline" href="https://t.me/lifehugs_bot">Life HUG'S</a> діють знижки</p>
+                  <button className="bg-white/95 text-[#6525AB] px-8 py-3 mt-2 rounded-full font-semibold
                     hover:bg-white transition-all shadow-[0_4px_16px_rgba(255,255,255,0.3)]
                     hover:shadow-[0_4px_24px_rgba(255,255,255,0.4)]
-                    transform hover:scale-105 animate-pulse-slow mt-auto">
+                    transform hover:scale-105 animate-pulse-slow mt-auto"
+                    onClick={() => {
+                      window.open('https://agenthugs.ai/login', '_blank');
+                    }}
+                    >
                     Обрати
                   </button>
                 </div>
               </div>
             </div>
             
-            {/* PRO Card */}
-            <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm flex flex-col">
-              <h3 className="text-2xl font-bold mb-4 text-[#6525AB]">PRO</h3>
-              <p className="text-lg text-gray-300 mb-4">Start for free</p>
-              <ul className="text-white/90 text-left space-y-3 mb-8 backdrop-blur-sm bg-white/10 p-4 rounded-lg
-                border border-white/20 flex-grow">
-                <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> Інвестиційні ідеї
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> Інвестиційний портфель
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> Сповіщення по тикерам
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> Список спостереження
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> ШІ помічник
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> Особисті тикери/компанії для аналізу
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> Повний список параметрів по тикеру/компанії
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-white">✓</span> Персональне управління власним портфелем
-                </li>
-              </ul>
-              <button className="border-2 border-gray-500 text-gray-500 px-8 py-3 rounded-full 
-                hover:bg-[#6525AB] hover:text-white transition-all mt-auto" disabled>
-                Не доступно
-              </button>
-            </div>
-            
+   
           </div>
         </div>
       </section>
