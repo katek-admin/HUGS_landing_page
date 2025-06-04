@@ -184,7 +184,7 @@ function App() {
             <div className="bg-gray-800/80 p-8 rounded-xl border border-gray-700 text-center backdrop-blur-sm flex flex-col">
               <div className="w-full h-[400px]">
                 <iframe 
-                  src="https://www.youtube.com/embed/0nUg0T8se-I" 
+                  src="https://www.youtube.com/embed/S3js7YolsqE" 
                   title="YouTube video Agent HUGS" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowFullScreen
