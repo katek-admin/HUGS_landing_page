@@ -291,7 +291,10 @@ function App() {
                   <button className="bg-white/95 text-[#6525AB] px-8 py-3 rounded-full font-semibold
                     hover:bg-white transition-all shadow-[0_4px_16px_rgba(255,255,255,0.3)]
                     hover:shadow-[0_4px_24px_rgba(255,255,255,0.4)]
-                    transform hover:scale-105 animate-pulse-slow mt-auto">
+                    transform hover:scale-105 animate-pulse-slow mt-auto"
+                    onClick={() => {
+                      window.open('https://agenthugs.ai/login', '_blank');
+                    }}>
                     {t('chooseButton')}
                   </button>
                 </div>

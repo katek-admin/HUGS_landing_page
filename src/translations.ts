@@ -45,7 +45,18 @@ export const translations = {
       planFeature5: "Перелік компаній з високими аналітичними оцінками",
       planNote: "* для учасників",
       planDiscount: "діють знижки",
-      chooseButton: "Обрати"
+      chooseButton: "Обрати",
+      
+      // Footer Section
+      disclaimer: {
+        title: "Дисклеймер:",
+        text: "Інформація, що надається цим сервісом, має виключно інформаційний та аналітичний характер. Вона сформована на основі публічно доступних джерел і не є інвестиційною порадою, рекомендацією, чи закликом до здійснення будь-яких фінансових операцій. Компанія не є ліцензованим учасником фінансового ринку та не надає послуг з інвестиційного консультування, управління активами або брокерської діяльності."
+      },
+      footer: {
+        privacyPolicy: "Політика конфіденційності",
+        publicOffer: "Договір публічної оферти",
+        copyright: "© {year} Агент Хагс. Всі права захищені."
+      }
     },
     ru: {
       // Navigation
@@ -79,7 +90,7 @@ export const translations = {
       // Advantages Section
       advantagesTitle: "Преимущества",
       advantage1: "Информационно-аналитические обзоры публичных компаний в удобном формате",
-  advantage2: "Подборка компаний с высокими оценками согласно нашей информационной модели",
+      advantage2: "Подборка компаний с высокими оценками согласно нашей информационной модели",
       advantage3: "Персонализированные сообщения в соответствии с выбранными критериями",
       
       // Plans Section
@@ -93,7 +104,18 @@ export const translations = {
       planFeature5: "Перечень компаний с высокими аналитическими оценками",
       planNote: "* для участников",
       planDiscount: "действуют скидки",
-      chooseButton: "Выбрать"
+      chooseButton: "Выбрать",
+      
+      // Footer Section
+      disclaimer: {
+        title: "Дисклеймер:",
+        text: "Информация, предоставляемая этим сервисом, имеет исключительно информационный и аналитический характер. Она сформирована на основе публично доступных источников и не является инвестиционным советом, рекомендацией, или призывом к осуществлению каких-либо финансовых операций. Компания не является лицензированным участником финансового рынка и не предоставляет услуг по инвестиционному консультированию, управлению активами или брокерской деятельности."
+      },
+      footer: {
+        privacyPolicy: "Политика конфиденциальности",
+        publicOffer: "Договор публичной оферты",
+        copyright: "© {year} Агент Хагс. Все права защищены."
+      }
     },
     en: {
       // Navigation
@@ -141,6 +163,17 @@ export const translations = {
       planFeature5: "List of companies with high analytical ratings",
       planNote: "* for participants",
       planDiscount: "discounts apply",
-      chooseButton: "Choose"
+      chooseButton: "Choose",
+      
+      // Footer Section
+      disclaimer: {
+        title: "Disclaimer:",
+        text: "The information provided by this service is for informational and analytical purposes only. It is based on publicly available sources and is not investment advice, recommendation, or a call to make any financial transactions. The company is not a licensed participant in the financial market and does not provide investment consulting, asset management, or brokerage services."
+      },
+      footer: {
+        privacyPolicy: "Privacy Policy",
+        publicOffer: "Public Offer Agreement",
+        copyright: "© {year} Agent HUGS. All rights reserved."
+      }
     }
   };  

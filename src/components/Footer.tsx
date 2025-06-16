@@ -1,14 +1,18 @@
 import { Link } from 'react-router-dom';
 import Logo from '../assets/Logo.svg';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
      <footer className="bg-gray-800/50 py-8 border-t border-gray-700">
      <div className="container mx-auto px-4">
        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-gray-400 text-sm w-3/4">
-          <p><strong>Дисклеймер:</strong> Інформація, що надається цим сервісом, має виключно інформаційний та аналітичний характер. Вона сформована на основі публічно доступних джерел і не є інвестиційною порадою, рекомендацією, чи закликом до здійснення будь-яких фінансових операцій.
-          Компанія не є ліцензованим учасником фінансового ринку та не надає послуг з інвестиційного консультування, управління активами або брокерської діяльності.</p>
+          <p><strong>{t.disclaimer.title}</strong> {t.disclaimer.text}</p>
         </div>
         
          <div className="w-1/4 order-1 flex flex-col items-center md:order-2 gap-2">
@@ -16,13 +20,13 @@ const Footer = () => {
               to="/privacy-policy" 
               className="text-gray-400 hover:text-[#6525AB] transition-colors"
             >
-              Політика конфіденційності
+              {t.footer.privacyPolicy}
             </Link>
             <Link 
               to="/public-offer" 
               className="text-gray-400 hover:text-[#6525AB] transition-colors"
             >
-              Договір публічної оферти
+              {t.footer.publicOffer}
             </Link>
            
          </div>
@@ -30,7 +34,7 @@ const Footer = () => {
        <div className="order-2 flex items-center justify-center gap-4 md:order-1 mt-4">
         <img src={Logo} alt="Logo" className="h-8 w-auto" />
         <p className="text-gray-400 text-sm">
-          © {new Date().getFullYear()} Агент Хагс. Всі права захищені.
+          {t.footer.copyright.replace('{year}', new Date().getFullYear().toString())}
         </p>
        </div>
      </div>
